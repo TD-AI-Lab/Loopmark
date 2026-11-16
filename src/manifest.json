@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Loopmark — YouTube A–B Loop",
+  "version": "0.1.5",
+  "description": "Répétez un passage d'une vidéo YouTube entre deux timecodes A et B, sans suivi ni compte.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "loopmark@open-source.example",
+      "strict_min_version": "140.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  }
+}
